@@ -1,0 +1,73 @@
+[System]
+Name='UAS_TRO_MUHAMAD_BRAHIM_FAJRI'
+Type='mamdani'
+Version=2.0
+NumInputs=3
+NumOutputs=1
+NumRules=27
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Batuk'
+Range=[0 30]
+NumMFs=3
+MF1='Normal':'trimf',[0 7 14]
+MF2='Sedang':'trimf',[7 14 21]
+MF3='Tinggi':'trimf',[14 22 30]
+
+[Input2]
+Name='Nyeri_dada'
+Range=[0 10]
+NumMFs=3
+MF1='Tidak':'trimf',[0 2.5 5.5]
+MF2='Sedang':'trimf',[2.5 5.5 8.5]
+MF3='Ya':'trimf',[5.5 7.5 10]
+
+[Input3]
+Name='Sesak_nafas'
+Range=[0 10]
+NumMFs=3
+MF1='Tidak':'trimf',[0 2.5 5.5]
+MF2='Sedang':'trimf',[2.5 5.5 8.5]
+MF3='Ya':'trimf',[5.5 7.5 10]
+
+[Output1]
+Name='Terindikasi_TBC'
+Range=[0 1]
+NumMFs=3
+MF1='Rendah':'trimf',[0 0.25 0.5]
+MF2='Sedang':'trimf',[0.25 0.5 0.75]
+MF3='Tinggi':'trimf',[0.5 0.75 1]
+
+[Rules]
+1 1 1, 1 (1) : 1
+1 1 2, 1 (1) : 1
+1 1 3, 2 (1) : 1
+1 2 1, 1 (1) : 1
+1 2 2, 2 (1) : 1
+1 2 3, 2 (1) : 1
+1 3 1, 2 (1) : 1
+1 3 2, 2 (1) : 1
+1 3 3, 2 (1) : 1
+2 1 1, 1 (1) : 1
+2 1 2, 2 (1) : 1
+2 1 3, 2 (1) : 1
+2 2 1, 2 (1) : 1
+2 2 2, 2 (1) : 1
+2 2 3, 2 (1) : 1
+2 3 1, 1 (1) : 1
+2 3 2, 2 (1) : 1
+2 3 3, 3 (1) : 1
+3 1 1, 2 (1) : 1
+3 1 2, 2 (1) : 1
+3 1 3, 3 (1) : 1
+3 2 1, 2 (1) : 1
+3 2 2, 3 (1) : 1
+3 2 3, 3 (1) : 1
+3 3 1, 2 (1) : 1
+3 3 2, 3 (1) : 1
+3 3 3, 3 (1) : 1
